@@ -1,0 +1,19 @@
+{
+    "name": "Trabalho_PW",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "node app/index.js",
+        "migrate": "knex migrate:up"
+    },
+    "dependencies": {
+        "@koa/cors": "^2.2.3",
+        "app-module-path": "^2.2.0",
+        "knex": "^0.20.6",
+        "koa": "^2.11.0",
+        "koa-bodyparser": "^4.2.1",
+        "koa-router": "^7.4.0",
+        "pg": "^7.17.0"
+    }
+}
