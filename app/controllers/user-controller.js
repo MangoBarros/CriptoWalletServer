@@ -40,6 +40,13 @@ module.exports = app => {
         context.body = user;
     });
 
+    app.post("/users/login", async context => {
+        console.log(context.request.body.email);
+        const mail = await userManager.check(context.request.body.email);
+        console.log(mail);
+        context.body = mail;
+    });
+
     // Delete user.
     app.delete("/users/:id", async context => {
         await userManager.deleteUser(context.params.id);

@@ -48,6 +48,14 @@ class UserManager {
         return user;
     }
 
+    async check(email) {
+        const user = await knex("users")
+            .select("*")
+            .where({ email });
+
+        return user;
+    }
+
     /**
      * Update user.
      */

@@ -55,12 +55,12 @@ class WalletManager {
      */
 
     async updateWallet(id, data) {
-        const Wallet = await knex("wallet")
+        const Wallet = await knex("wallets")
             .update(data)
             .where({ id })
             .returning("*");
 
-        return user;
+        return Wallet;
     }
 
     /**
