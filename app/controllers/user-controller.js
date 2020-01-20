@@ -5,6 +5,7 @@
  */
 
 const userManager = require("src/users/user-manager");
+const walletManager = require("src/wallets/wallet-manager");
 
 /**
  * Export `UsersController`.
@@ -52,5 +53,12 @@ module.exports = app => {
         await userManager.deleteUser(context.params.id);
 
         context.status = 204;
+    });
+
+    app.get("/users/:user_id/wallet", async context => {
+        console.log("work");
+        const [wallet] = await walletManager.findByUserId(context.params.user_id);
+
+        context.body = wallet;
     });
 };

@@ -33,6 +33,14 @@ class WalletManager {
         return wallet;
     }
 
+    async findByUserId(user_id) {
+        console.log(user_id);
+        const wallet = await knex("wallets")
+            .select("*")
+            .where({ user_id });
+        return wallet;
+    }
+
     /**
      * Create user.
      */

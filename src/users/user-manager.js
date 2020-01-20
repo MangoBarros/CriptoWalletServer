@@ -26,7 +26,7 @@ class UserManager {
      */
 
     async findById(id) {
-        const user = await knex("users")
+        const [user] = await knex("users")
             .select("*")
             .where({ id });
 
@@ -49,7 +49,7 @@ class UserManager {
     }
 
     async check(email) {
-        const user = await knex("users")
+        const [user] = await knex("users")
             .select("*")
             .where({ email });
 
